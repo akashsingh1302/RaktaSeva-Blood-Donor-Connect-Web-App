@@ -1,0 +1,102 @@
+{% extends "index.html"}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+</head>
+<body>
+ <nav class="navbar navbar-dark navbar-fixed-top bg-inverse navbar-full" id="nav-main" style="background-color: black">
+      <a class="navbar-brand" href="#">
+      <img src="{% static "images/img5.jpg" %}" width="80" height="35" class="d-inline-block align-top" alt=""></a>
+      <a href="index" class="navbar-brand">RaktaSeva</a>
+      <ul class="nav navbar-nav navbar-right" style="float: right;padding:0px 20px">
+          <li class="nav-item">
+              <a class="nav-link" href="#what-we-do">Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#faculty-member">Developers</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-success-outline"
+            data-toggle="modal" data-target="#myModal">Complete Profile</button>
+          </li>
+          <li class="nav-item">
+            <a href="getstart"><button class="btn btn-success-outline" type="submit">Sign Out</button></a>
+          </li>
+      </ul>
+    
+  </nav>
+
+  <div class="container">
+      <br><br><br><br>
+      <h2 style="text-align: center;">Hospital List</h2><hr style="background-color: black;"><br>
+      <p style="text-align:center">This table displays the data for all the hopital entries made by you.</p>            
+      <table class="table table-bordered " style=" background-color:gray;color:white">
+        <thead style="background-color:rgb(14, 13, 13);color:white;"> 
+          <tr>
+            <th>Hospital Name</th>
+            <th>Hospital Contact</th>
+            <th>Hospital Locality</th>
+            <th>Hospital City</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in query_results %}
+          <tr>
+            <td>{{item.hospital_name}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.locality}}</td>
+            <td>{{item.City}}</td>
+         
+           
+          </tr>
+          {% endfor %}
+          
+
+          
+        </tbody>
+      </table><br>
+      <a href="backtodashboard"><button type="button" class="btn btn-success-outline btn-info" style="background-color:black;margin-left:40%;">BACK TO DASHBOARD</button></a>
+ 
+  </div>
+  <br>
+  
+  <footer id="footer" class="footer" style="margin-top: 13%;">
+    <div class="container text-center">
+      <h3>Connnect us!</h3>
+      <!-- End newsletter-form -->
+      <ul class="social-links" >
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+      
+  </footer>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+{% endblock content%}

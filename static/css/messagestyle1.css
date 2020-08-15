@@ -1,0 +1,59 @@
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+  }
+  .try{
+      background-color:#4caf50;
+      border:2px solid #fff;
+      border-radius:6px;
+      color:white;
+      padding:10px 20px;
+      text-align:center;
+      text-decoration:none;
+      display:inline-block;
+      font-size:16px;
+      margin:4px 2px;
+      cursor:pointer;
+  }
+  .try:hover{
+      background-color:#fff;
+      color:black;
+  }
+  .bg-image{
+    /* The image used */
+   
+  
+    /* Add the blur effect */
+    filter: blur(2px);
+    -webkit-filter:blur(2px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

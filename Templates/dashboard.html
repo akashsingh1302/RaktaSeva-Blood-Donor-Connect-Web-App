@@ -1,0 +1,56 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{%  static 'css/dashboardstyle.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMIN_DASHBOARD</title>
+</head>
+<body>
+      <ul>
+        <div class="span"><span style="float:left;font-size:30px;margin-top: 10px;position: absolute;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></div>
+        <div id="mySidenav" class="sidenav">
+           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           
+           <a href="#"><i class="fa fa-fw fa-users"></i> About</a>
+           <a href="#"><i class="fa fa-fw fa-home"></i> Services</a>
+           <a href="#"><i class="fa fa-fw fa-user"></i> Clients</a>
+           <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+         </div>
+        <li><img src="{% static "images/img5.JPG" %}"  id="logo"/></li>
+        <li style="float:right"></listyle><a class="active" href="logout"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+        <li style="float:right"><a class="active" href="#about"><i class="fa fa-fw fa-users"></i> About</a></li>
+        <li style="float:right"></listyle><a class="active" href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+        <li style="float:right"><a class="active" href="home"><i class="fa fa-fw fa-home"></i> Home</a></li>
+     </ul>
+     
+
+    
+     <div class="container">
+        <h3>Welcome, {{name}}</h3>
+        <hr>
+        
+          <div class="container1">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+
+
+    </div>
+
+
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+</body>
+</html>
+{% endblock content%}

@@ -1,0 +1,27 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      </head>
+      <style>
+        .bg-image{
+  /* The image used */
+  background-image:url("{% static 'images/img6.JPG' %}");
+
+
+}
+  </style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="{%  static 'css/messagestyle1.css' %}">
+</head>
+<body>
+<div class="bg-image"></div>
+<div class="bg-text">
+<h2>Dear User message sent successfully to {{length}} RaktaSeva Users.</h2>
+<a href="backtodashboard" class="try">BACK TO DASHBOARD</a>
+</div>
+</body>
+</html>
+{% endblock content %}      

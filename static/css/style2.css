@@ -1,0 +1,95 @@
+.split{
+	height:100%;
+	width:50%;
+	position:fixed;
+	z-index:1;
+	top:0;
+	overflow-x:hidden;
+	padding-top:20px;
+}
+.left{
+	left:0;
+	background-color:black;
+}
+.right{
+	right:0;
+	background-color:#281A41;
+}
+.centered{
+	position:absolute;
+	background-color:black;
+	width:650px;
+	height:450px;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	text-align:center;
+}
+.centered img{
+	width:85%;
+	
+
+}
+.centered1{
+	position:absolute;
+	background-color:#281A41;
+    border-radius: 10px;
+    opacity: 0.9;
+	width:400px;
+	height:400px;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	text-align:center;
+}
+h1{
+	color:#fff;
+}
+
+hr{
+width:350px;
+    
+}
+input[type=text],input[type=password]{
+	width:90%;
+	box-sizing:border-box;
+	padding:15px 100px;
+	background:rgba(0,0,0,0.10);
+	outline:none;
+	border:none;
+	border:1px solid #fff;
+	color:#fff;
+	border-radius:5px;
+	margin:8px;
+	font-weight:bold;
+}
+input[type=submit]{
+	width=100%;
+	box-sizing=border-box;
+	padding:12px 110px;
+	margin-top:30px;
+	outline:none;
+	border:none;
+	background:green;
+	opacity:1.0;
+	border-radius:20px;
+	font-size:20px;
+	color:#fff;
+	cursor: pointer;
+}
+input[type=submit]:hover{
+	background:#003366;
+	opacity:1;
+}
+h3{
+	color:#fff;
+}
+h3 a{
+	color:green;
+	text-decoration:none;
+	padding:4px;
+}
+
+	
+
+

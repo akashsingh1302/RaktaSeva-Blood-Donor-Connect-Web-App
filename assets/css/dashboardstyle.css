@@ -1,0 +1,189 @@
+body{
+
+	background-color:#e3e3e3;
+
+}
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color:black;
+	margin-left: -0.56vmax;
+	margin-right: -0.55vmax;
+	margin-top: -0.58vmax;
+	height:65px;
+  }
+
+  li {
+	float: left;
+	font-size:25px;
+	}
+  #logo {
+
+	display: inline-block;
+    height:70px;
+    margin-left:0vmax;
+	cursor: pointer;
+    }
+    #logo1{
+	    top:-10px;
+        display: inline-block;
+        height:70px;
+        margin-top:-3.5px;
+        margin-left:3.5vmax;
+        border:1px solid white;
+        cursor: pointer;
+        }
+
+    .span{
+     margin-left: -2vmax;
+    }
+  li a {
+	display: block;
+	color: white;
+	text-align:center;
+	padding: 23px 30px;
+	text-decoration: none;
+    }
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+	background-color: grey;
+  }
+  h1{
+	color:black;
+	font-size:65px;
+    text-align: left;
+	}
+h2{
+	color:#fff;
+    font-size:35px;
+}
+h3{
+    color:black;
+
+}
+.button{
+	background-color:#47279e;
+	color:white;
+	padding:15px 38px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:24px;
+	margin:2px ;
+	cursor:pointer;
+}
+.button:hover{
+	background-color:#fff;
+	color:black;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:black;
+    border:#e3e3e3;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+    margin-top: 5px;
+    background-color: grey;
+    border:1px solid black;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+    background-color: hotpink;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    font-size: 36px;
+    margin-left: 40px;
+    border:1px solid black;
+    background-color: black;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height:20%;;
+    margin-left:25%;
+    border-radius: 5px;
+    border:1px solid black;
+
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    border-radius: 5px 5px 0 0;
+    height:70%;
+  }
+ 
+  .welcome{
+      margin-left:50%;
+      width:80%;
+  }
+  .container{
+    margin-left:19%;
+    top:20%;
+    width:80%;
+    height:800px;
+	border-radius:5px;
+    padding:10px;
+
+}
+.container1{
+    position:absolute;
+    margin-left:50px;
+}
+.container2{
+    position:absolute;
+    margin-left:50px;
+    top:62%;
+    background-color: hotpink;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width:300px;
+    background-color:blue;
+    opacity:0.65;
+    height:110px;
+    border-radius: 5px;
+    margin:10px 10px;
+    display: inline-block;
+
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .container3{
+    padding: 2px 16px;
+  }

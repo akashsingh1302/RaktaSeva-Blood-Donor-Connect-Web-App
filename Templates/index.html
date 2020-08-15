@@ -1,0 +1,351 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <style>
+       #cover{
+        background: #222 url("{% static 'images/testimage2.jpg' %}") center center no-repeat;
+       }
+       #about{
+        background: url("{% static 'images/testimage3.jpg' %}") center center no-repeat;
+       }
+     </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Custom CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    
+  </head>
+  <body>
+   <nav class="navbar navbar-dark navbar-fixed-top bg-inverse navbar-full" id="nav-main" style="background-color: black">
+        <a class="navbar-brand" href="#">
+        <img src="{% static "images/img5.jpg" %}" width="80" height="35" class="d-inline-block align-top" alt=""></a>
+        <a href="index" class="navbar-brand">RaktaSeva</a>
+        <ul class="nav navbar-nav navbar-right" style="float: right;padding:0px 20px">
+            <li class="nav-item">
+                <a class="nav-link" href="#what-we-do">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#faculty-member">Developers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-success-outline"
+              data-toggle="modal" data-target="#myModal">Complete Profile</button>
+            </li>
+            <li class="nav-item">
+              <a href="getstart"><button class="btn btn-success-outline" type="submit">Sign Out</button></a>
+            </li>
+        </ul>
+      
+    </nav>
+
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog" style="margin-left:20%">
+        <div class="modal-content" style="width:800px">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align:center;">Complete Profile</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" class="form-horizontal" action="complete-profile">
+              {% csrf_token %}
+              <div class="form-group">
+              <label for="name" class="control-label col-sm-2">Name:</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="{{request.session.member_name}}" name="name">
+              </div>
+            </div>
+            
+              
+                <div class="form-group">
+                  <label for="name" class="control-label col-sm-2" style="margin-top:10px">Age:</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.age}}" name="age">
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <label for="name"style="margin-top:10px" class="control-label col-sm-2">Blood Group:</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control"style="margin-top:10px" placeholder="{{request.session.bldgrp}}" name="bldgrp">
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <label for="name" style="margin-top:10px" class="control-label col-sm-2">Apartment:</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.aptname}}" name="aptname">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="control-label col-sm-2" style="margin-top:10px">Landmark:</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.landmark}}" name="landmark">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" style="margin-top:10px" class="control-label col-sm-2">Locality:</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control"style="margin-top:10px" placeholder="{{request.session.locality}}" name="locality">
+                </div>
+              </div>
+                <div class="form-group">
+                  <label for="name"style="margin-top:10px" class="control-label col-sm-2">City:</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control"style="margin-top:10px" placeholder="{{request.session.city}}" name="city">
+                  </div>
+                </div>
+                <button type="submit" class=" btn btn-success-outline" style="margin-left:280px;margin-top:10px">Submit</button>
+                <button type="reset" class="btn btn-success-outline" style="margin-left:20px;margin-top: 10px;">Clear</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+      
+    
+   <section id="cover" style="height: 95%">
+       <div id="cover-caption">
+           <div class="container" style="color:white">
+               <div class="col-sm-10 col-sm-offset-1">
+                   <h1><div class="display-3">Welcome to Rakta Seva</div></h1>
+                   <p>Raktaseva is all about saving lives by providing the most needed help to pateints in crucial moments.
+                           A Web-App that connects donors to the needy,and indeed provides them with a new Life.</p>
+                           <form action="index" class="form-inline">
+                            <div class="form-group">
+                            <label class="sr-only">Name</label>
+                            <input type="text" class="form-control form-control-lg" placeholder="{{request.session.member_name}}">
+                            <input type="text" class="form-control form-control-lg"placeholder="{{request.session.member_email}}">
+                            </div>   
+                            <button type="submit" class="btn btn-success btn-lg">Welcome User</button>
+                           </form>
+                           <br>
+                           <a href="#what-we-do" class="btn btn-secondary-outline btn-sn" role="button">&darr;</a>
+                           
+               </div>
+           </div>
+       </div>
+   </section>
+    
+    <section id="what-we-do" style="height:95%">
+         <div class="section-content">
+             <div class="container">
+                 <h2>FEATURES</h2>
+                 <br>
+             <div class="row">
+                     <div class="col-sm-12">
+                         <div class="card-group">
+                             <div class="card">
+                                 <div class="card-block">
+                                     <h4 class="card-title">Ask for Help!</h4>
+                                     <h6 class="card-subtitle"></h6>
+                                 </div>
+                                 <img src="{% static "images/askforhelp.png" %}" style="height:26%;width:100%" alt="a chalkboard">
+                                 <div class="card-block">
+                                     <button type="button" class="btn btn-success-outline" data-toggle="modal" data-target="#myModal1">learn more</button>
+                                 </div>
+                             </div>
+
+                             <div class="card">
+                                 <div class="card-block">
+                                     <h4 class="card-title">View Hospitals</h4>
+                                     <h6 class="card-subtitle"></h6>
+                                 </div>
+                                 <img src="{% static "images/hospitallogo.jpg" %}" style="height:31%" alt="working on a laptop">
+                                 <div class="card-block">
+
+                                    <a href="viewhospitals"<button type="button" class="btn btn-success-outline">learn more</button></a>
+                                 </div>
+                             </div>
+
+                             <div class="card">
+                                 <div class="card-block">
+                                     <h4 class="card-title">view History</h4>
+                                     <h6 class="card-subtitle"></h6>
+                                 </div>
+                                 <img src="{% static "images/history.jpg" %}" style="height: 60%" alt="fingers typing on a keyboard">
+                                 <div class="card-block">
+                                    
+                                     <a href="viewhistory"><button type="button" class="btn btn-success-outline">learn more</button></a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </section>
+
+    <div class="modal fade" id="myModal1" role="dialog">
+      <div class="modal-dialog" style="margin-left:30%;margin-top:15%;">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align:center;">ASK FOR HELP</h4>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+          <a href="selfhelp"><button class="btn btn-success-outline" style="margin-left:150px">SELF HELP</button></a>  
+          <a href="relativehelp"><button class="btn btn-success-outline" style="margin-left: 10px;">RELATIVE HELP</button></a>
+        </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <section id="about">
+        <div class="section-content1">
+            <div class="container">
+                <div class="col-md-5">
+                    <div class="about-text">
+                        <h3>About RaktaSeva</h3>
+                        <p class="lead">RAKTA SEVA is a Web-App that acts as a platform between the family of a patient and the Blood Donors living nearby to the Hospital in which the patient is admitted. The patient’s family doesn’t have to wait for blood to be available in those crucial times.</p>
+                        <p>Raktaseva is all about saving lives by providing the most needed help to pateints in crucial moments.
+                          A Web-App that connects donors to the needy,and indeed provides them with a new Life.</p>
+                        
+                        <h5>Follow me on the web</h5>
+                        <a href="" class="btn btn-sm btn-secondary-outline">twitter</a>
+                        <a href="" class="btn btn-sm btn-secondary-outline">facebook</a>
+                        <a href="" class="btn btn-sm btn-secondary-outline">youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="faculty-member" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center" style="text-align: center">
+          <h2>Meet Our Developers Team</h2>
+          <p>We as a dedicated team working hard to provide you the help in your crucial moments.<br></p>
+          <hr class="bottom-line">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container" >
+            <div class="pm-staff-profile-image-wrapper text-center" style="padding-left: 50px">
+              <div class="pm-staff-profile-image">
+                <img src="{% static "images/M3.jpeg" %}" style="height:280px;width: 250px" alt=""class="img-thumbnail img-circle">
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">Harsh Singh</p>
+              <p class="pm-staff-profile-title">Member of Developer Team</p>
+
+              <p class="pm-staff-profile-bio">The think tank, he takes care about the IDEA and Front End of RAKTASEVA. A person who is always present with innovative ideas ensuring productivity of the platform. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center" style="padding-left: 50px">
+              <div class="pm-staff-profile-image">
+                <img src="{% static "images/M1.jpg" %}" style="height:280px;width: 250px" alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">Akash Singh</p>
+              <p class="pm-staff-profile-title">Member of Developer Team</p>
+
+              <p class="pm-staff-profile-bio">The wise technical guy to rely on, he has contributed on Front-end as well as Backend logic building and the connectivity establishment in the development of RAKTASEVA. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center" style="padding-left: 50px">
+              <div class="pm-staff-profile-image">
+                <img src="{% static "images/M2.jpg" %}" style="height:280px;width: 250px" alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">Shreyansh Shukla</p>
+              <p class="pm-staff-profile-title">Member of Developer Team</p>
+
+              <p class="pm-staff-profile-bio">A Tech-freak and a developer ,he takes care about the login validatiion and authentication oriented part of RAKTASEVA and also generated the important test-cases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+    
+    <footer id="footer" class="footer">
+    <div class="container text-center">
+      <h3>Connnect us!</h3>
+      <!-- End newsletter-form -->
+      <ul class="social-links" >
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+      <h3>Developer Contact Details</h3><div class="social-links1"></div><br>
+      <div class="col-lg-3 col-md-3 col-sm-3 " style="text-align: center;width:30%" >
+          <h4>Akash Singh</h4><hr>
+          <p style align="center">Phone:+91 7276087434
+          <br>M@il ID:akashsingh13201@gmail.com</p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: center;width:40%" >
+          <h4>Harsh Singh</h4>
+          <hr>
+          <p style align="center">Phone:+91 8390313364
+          <br>M@il ID:harshsatishsingh1174@gmail.com</p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: center;width:30%">
+          <h4>Shreyansh Shukla</h4><hr>
+          <p style align="center">Phone:+91 8424983829
+          <br>M@il ID:shreyanshshukla@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+{% endblock content%}
+
+
+
+
+
+
+
+
+
+

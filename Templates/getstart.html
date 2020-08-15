@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+
+	background-color:#e3e3e3;
+
+}
+
+.split{
+	height:100%;
+	width:50%;
+	position:fixed;
+	z-index:1;
+	top:0;
+	overflow-x:hidden;
+	padding-top:20px;
+}
+.left{
+	left:0;
+	top:10%;
+	background-color:#e3e3e3;
+
+}
+.right{
+	right:0;
+	top:10%;
+	background-color:#e3e3e3;
+
+}
+.centered{
+	position:absolute;
+	background-image: url("{% static 'images/img3.jpg' %}");
+	width:650px;
+	height:550px;
+	top:34%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	text-align:center;
+}
+.centered img{
+	width:90%;
+	height:100%;
+	}
+
+.getstart{
+	position:absolute;
+	width:650px;
+	height:450px;
+	top:50%;
+	left:50%;
+
+	transform:translate(-50%,-50%);
+	text-align:left;
+
+
+}
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color:black;
+	margin-left: -0.56vmax;
+	margin-right: -0.55vmax;
+	margin-top: -0.58vmax;
+	height:65px;
+  }
+
+  li {
+	float: left;
+	font-size:25px;
+
+
+  }
+  #logo {
+	float: left;
+	display: inline-block;
+	height:70px;
+	margin-left: -3.5vmax;
+	cursor: pointer;
+
+
+  }
+
+
+
+  li a {
+	display: block;
+	color: white;
+	text-align:center;
+	padding: 23px 30px;
+	text-decoration: none;
+
+  }
+
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+	background-color: grey;
+  }
+
+h1{
+	color:black;
+	font-size:65px;
+    text-align: left;
+
+}
+h2{
+	color:#fff;
+    font-size:35px;
+}
+.button{
+	background-color:#47279e;
+	color:white;
+	padding:15px 38px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:24px;
+	margin:2px ;
+	cursor:pointer;
+}
+.button:hover{
+	background-color:#fff;
+	color:black;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+      <li><img src="{% static "images/img5.JPG" %}"  id="logo"/></li>
+      <li style="float:right"><a class="active" href="#about">About</a></li>
+      <li style="float:right"></listyle><a class="active" href="#contact">Contact</a></li>
+      <li style="float:right"></listyle><a class="active" href="login">Sign In</a></li>
+        <li style="float:left"><a class="active" href="home">Home</a></li>
+
+
+      </ul>
+
+  <div class="split left">
+    <div class="centered">
+
+    <h2></h2>
+    </div>
+    </div>
+    <div class="split right">
+    <div class="getstart">
+<h1>Join Us and help us spreading life.</h1>
+<a href="login" class="button">GET STARTED</a>
+</div>
+</div>
+
+</body>
+</html>

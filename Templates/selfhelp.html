@@ -1,0 +1,129 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+</head>
+<body>
+ <nav class="navbar navbar-dark navbar-fixed-top bg-inverse navbar-full" id="nav-main" style="background-color: black">
+      <a class="navbar-brand" href="#">
+      <img src="{% static "images/img5.jpg" %}" width="80" height="35" class="d-inline-block align-top" alt=""></a>
+      <a href="index" class="navbar-brand">RaktaSeva</a>
+      <ul class="nav navbar-nav navbar-right" style="float: right;padding:0px 20px">
+          <li class="nav-item">
+              <a class="nav-link" href="#what-we-do">Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#faculty-member">Developers</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-success-outline"
+            data-toggle="modal" data-target="#myModal">Complete Profile</button>
+          </li>
+          <li class="nav-item">
+            <a href="getstart"><button class="btn btn-success-outline" type="submit">Sign Out</button></a>
+          </li>
+      </ul>
+    
+  </nav>
+
+  <div class="container">
+      <br><br><br><br>
+    <h2 style="text-align:center">SELF HELP FORM</h2><hr style="background-color: black;">
+    <h6 style="color: red; text-align:center">IMPORTANT NOTE:</h6>
+    <p style="text-align: center;">By entering data here we will try to find the people in hosptal's locality having same
+    blood group as yours and will notify them to help you</p>
+    <form class="form-horizontal" action="sendmessageforself" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for=>Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="{{request.session.member_name}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Age:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.age}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Blood Group:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.bldgrp}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" style="margin-top:10px" >Contact Detail:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="{{request.session.member_mobile}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" style="margin-top:10px" >Name of the Hospital:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="Enter Hospital Name" name="hname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" style="margin-top:10px" >Hospital Contact:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="Hospital Contact No." name="hcontact">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" style="margin-top:10px" >Locality:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="Enter Hospital Locality" name="hlocality">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" style="margin-top:10px" >Hospital City:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" style="margin-top:10px" placeholder="Enter Hospital City" name="hcity">
+        </div>
+      </div>
+      <br><br><br><br>
+      
+      
+      <button type="submit" class="btn btn-success-outline" style="margin-left:45%;margin-top: 10px;">Message All</button>
+    </form>
+  </div>
+  <br>
+  
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <h3>Connnect us!</h3>
+      <!-- End newsletter-form -->
+      <ul class="social-links" >
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+      
+  </footer>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+{% endblock content%}

@@ -1,0 +1,138 @@
+/*
+STYLES.CSS
+
+Course:  Bootstrap 4 Quick Start
+Author:  Brad Hussey
+Website: bradhussey.ca
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* cover */
+
+#cover {
+   
+    background-size: cover;
+    color: white;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#cover-caption {
+    width: 100%;
+}
+
+.section-content {
+    padding: 5rem 0;
+    background-color: #e6e6e6;
+    text-align: center;
+}
+.section-content1 {
+    padding: 2rem 0;
+}
+
+#about {
+   
+    background-size: cover;
+}
+
+.about-text {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 1.875rem;
+}
+
+
+.pm-staff-profile-image{
+  width: 250px;
+  height: 280px;
+  background-color: #C6C6C6;
+  border-radius: 50%;
+  display: inline-block;
+  
+  
+}
+.pm-staff-profile-details {
+    padding: 20px 20px;
+    text-align: center;
+}
+.pm-staff-profile-name {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #2b5d83;
+}
+.pm-staff-profile-title {
+    text-transform: capitalize;
+    color: #4b4b4b;
+    font-weight: 500;
+    padding: 12px 0px;
+}
+.pm-staff-profile-bio {
+  text-transform: capitalize;
+  color: #4b4b4b;
+  font-weight: 100;
+}
+.section-padding{
+	padding: 60px 0px;
+}
+
+.footer {
+    padding: 20px;
+    background: #111;
+    color: #ccc;
+}
+.footer a {
+    color: #fff;
+}
+
+.footer h3{
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	
+	font-size: 24px;
+    text-align: center;
+}
+
+.footer .social-links li a {
+    color: #fff;
+    font-size: 32px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.footer .social-links li {
+    display: inline-block;
+    margin-left:150px;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    
+}
+.footer .mc-trial {
+    margin: 20px 0;
+}
+.footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    padding: 40px 0 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer .social-links1{
+    padding: 10px 0 0;
+     border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+
+

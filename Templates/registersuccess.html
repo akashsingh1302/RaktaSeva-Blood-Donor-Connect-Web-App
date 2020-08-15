@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+<head>
+    <style>
+          .bg-image{
+    /* The image used */
+    background-image:url("{% static 'images/img2.JPG' %}");
+  
+
+  }
+    </style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="{%  static 'css/invalidstyle1.css' %}">
+</head>
+<body>
+<div class="bg-image"></div>
+<div class="bg-text">
+<h2>Registered Successfully!</h2>
+<a href="login" class="try">Login</a>
+</div>
+</body>
+</html>
